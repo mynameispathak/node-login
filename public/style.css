@@ -1,0 +1,62 @@
+
+.simple-login-container{
+    width:300px;
+    max-width:100%;
+    margin:50px auto;
+}
+.title{
+    text-align:center;
+    font-size:30px;
+    padding: 3rem;
+    font-family: 'Roboto';
+    font-weight: bolder;
+    /* padding-bottom: 20px; */
+}
+
+.simple-login-container .btn-login{
+    background-color:#FF5964;
+    color:#fff;
+    margin-top: 20px;
+}
+
+.container i {
+    margin-left: 270px;
+    margin-top: -25px;
+    cursor: pointer;
+}
+
+.register{
+    text-align: center;
+}
+
+.logout{
+    position: absolute;
+    right: 0;
+    top: 216px;
+    padding: 6px;
+    font-family: 'Roboto';
+
+}
+
+.displayName{
+    position: relative;
+    top: -33px;
+    padding: 7px;
+    font-size: 25px;
+    font-family: 'Roboto';
+    font-weight: bold;
+}
+
+.content{
+    top: 30px;
+    position: relative;
+    background-color: lavender;
+}
+
+.j1{
+    padding: 2rem 2rem;
+}
+
+.j1 h1{
+    font-size: 40px;
+}
