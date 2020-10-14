@@ -1,19 +1,65 @@
-<h1>Register</h1>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 
 <form action="/register" method="post">
-    <div>
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required>
+    <div class="simple-login-container">
+        <div class="title">Register</div>
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <!-- <label for="email">Email</label> -->
+                <input type="text" class="form-control" name="email" id="email" placeholder="Email" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container col-md-12 form-group">
+                <!-- <label for="password">Password</label> -->
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password"
+                    required>
+                <i class="far fa-eye" id="togglePassword"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="radio" name="group" id="student" value="student" required>
+                <label for="student">Student</label>
+            </div>
+            <div class="col">
+                <input type="radio" name="group" value="teacher" id="teacher">
+                <label for="teacher">Teacher</label>
+            </div>
+            <div class="col">
+                <input type="radio" name="group" value="parent" id="parent">
+                <label for="parent">Parent</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <button class="login btn btn-block btn-login" type="submit">Register</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 register">
+                <a href="/login">Login</a>
+            </div>
+        </div>
     </div>
-    <div>
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email" required>
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="text" name="password" id="password" required>
-    </div>
-    <button type="submit">Register</button>
 </form>
 
-<a href="/login">Login</a>
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+    togglePassword.addEventListener('click', function (e) {
+        // toggle the type attribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        // toggle the eye slash icon
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

@@ -1,0 +1,20 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="style.css">
+
+<div class="jumbotron j1">
+    <h1 class="title">Student Dashboard</h1>
+</div>
+
+<div class="displayName">Welcome <%= name %></div>
+
+<form action="/logout?_method=DELETE" method="POST">
+    <button class="btn-danger logout" type="submit">Logout</button>
+</form>
+
+<main role="main" class="container">
+    <div class="jumbotron content">
+        <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio a repudiandae suscipit officia
+            vero esse, eveniet perferendis rerum eaque facilis blanditiis, odit quisquam omnis numquam quos nostrum
+            quidem ipsam. Delectus!</p>
+    </div>
+</main>
