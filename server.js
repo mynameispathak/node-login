@@ -10,6 +10,7 @@ const flash = require('express-flash');
 const session = require('express-session');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
+const PORT = process.env.PORT || 3000;
 
 const initializePassport = require('./passport-config');
 const { urlencoded } = require('body-parser');
@@ -49,7 +50,7 @@ app.get('/login', checkNotAuthenticated, function (req, res) {
 });
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
-app.post('/login', urlencodedParser, checkNotAuthenticated, passport.authenticate('local', { failureRedirect: '/login' }),
+app.post('/login', urlencodedParser, checkNotAuthenticated, passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }),
     function (req, res) {
         if (req.body.group === 'student') {
             res.redirect('/student');
@@ -62,15 +63,6 @@ app.post('/login', urlencodedParser, checkNotAuthenticated, passport.authenticat
         }
     }
 );
-// successRedirect: '/',
-// ,
-// failureFlash: true
-// if(req.user.category === 'student') {
-// res.redirect('/student');
-//         })
-//     }
-// }
-// );
 
 app.get('/register', checkNotAuthenticated, function (req, res) {
     res.render('register.ejs');
@@ -153,6 +145,6 @@ function checkNotAuthenticated(req, res, next) {
     next();
 }
 
-app.listen(3000, function (req, res) {
-    console.log('Server running on port 3000');
+app.listen(PORT, function (req, res) {
+    console.log(`Server Running at port ${PORT}`);
 });

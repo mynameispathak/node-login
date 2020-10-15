@@ -5,8 +5,6 @@ const bcrypt = require('bcrypt');
 function initialize(passport, getUserByEmail, getUserById) {
     const authenticateUser = async function (email, password, done) {
         const user = getUserByEmail(email);
-        // console.log(user);
-        // const userg = getUserByGroup(group);
         if (user == null) {
             return done(null, false, { message: 'No user with that email' });
         }
