@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 app.use(flash());
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: 'secretidhere',
     resave: false,
     saveUninitialized: false //dont save empty value in session
 }));
